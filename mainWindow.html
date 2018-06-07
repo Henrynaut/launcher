@@ -5,5 +5,36 @@
 </head>
 <body>
     <h1>SpaceCRAFT Launcher</h1>
+    <ul></ul>
+
+    <script>
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+        // Save query within the UL
+        const ul = document.querySelector('ul');
+
+        // Add Items
+        ipcRenderer.on('item:add', function(e, item){
+            //Create li, and text node; add it to the li 
+            const li = document.createElement('li');
+            const itemText = document.createTextNode(item);
+            li.appendChild(itemText);
+            //add the li to the ul
+            ul.appendChild(li);
+        });
+
+        // Clear Items
+        ipcRenderer.on('item:clear', function(){
+            ul.innerHTML = '';
+        });        
+
+        // Remove Item
+        ul.addEventListener('dblclick', removeItem);
+
+        function removeItem(e){
+            e.target.remove();
+        }
+
+    </script>
 </body>
 </html>

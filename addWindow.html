@@ -9,7 +9,27 @@
             <label>Enter Package</label>
             <input type="text" id="item" autofocus>
         </div>
-        <button type="submit">add Package</button>
+        <button type="submit">Add Package</button>
     </form>
+
+    <script>
+        //call a renderer process with electron
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+
+        //Constant form is saved as the DOM input to the form
+        const form = document.querySelector('form');
+        //When the form is submitted, the submitForm function is run
+        form.addEventListener('submit', submitForm);
+
+        function submitForm(e){
+            e.preventDefault();
+            //set the item to what is submitted from the form
+            const item = document.querySelector('#item').value;
+            //send item data from the client to the server, caught in main.js
+            ipcRenderer.send('item:add', item);
+        }
+    </script>
+
 </body>
 </html>

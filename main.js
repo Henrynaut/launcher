@@ -4,7 +4,8 @@ const electron = require('electron');
 const url = require('url');
 const path = require('path');
 
-const {app, BrowserWindow, Menu} = electron;
+//ipcMain is used to catch the item from the ipcRenderer send function in addWindow
+const {app, BrowserWindow, Menu, ipcMain} = electron;
 
 let mainWindow;
 let addWindow;
@@ -45,10 +46,18 @@ function createAddWindow(){
         slashes: true
     }));
     // Garbage collection handle
-    addwindow.on('close', function(){
+    addWindow.on('close', function(){
         addWindow = null;
     });
 }
+
+// Catch item add from addWindow.html
+ipcMain.on('item:add',function(e, item){
+    //item:add is the object being caught
+    mainWindow.webContents.send('item:add', item);
+    //Close the new window after submission
+    addWindow.close();
+});
 
 // Create menu template
 const mainMenuTemplate = [
@@ -64,7 +73,10 @@ const mainMenuTemplate = [
                 }
             },
             {
-                label: 'Clear Systems'
+                label: 'Clear Systems',
+                click(){
+                    mainWindow.webContents.send('item:clear');
+                }
             },
             {
                 label: 'Quit',
