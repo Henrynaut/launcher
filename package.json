@@ -1,0 +1,22 @@
+{
+  "name": "launcher",
+  "version": "1.0.0",
+  "description": "Launcher",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Henrynaut/launcher.git"
+  },
+  "author": "Neil McHenry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Henrynaut/launcher/issues"
+  },
+  "homepage": "https://github.com/Henrynaut/launcher#readme",
+  "dependencies": {
+    "electron": "^2.0.2"
+  }
+}
