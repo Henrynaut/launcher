@@ -33,7 +33,7 @@ app.on('ready', function(){
 // Handle create add window
 function createAddWindow(){
     // Create new window
-    addnWindow = new BrowserWindow({
+    addWindow = new BrowserWindow({
         width: 300,
         height: 200,
         title:'Add Package to List'
