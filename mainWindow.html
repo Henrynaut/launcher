@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <title>SpaceCRAFT Launcher</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+           
 </head>
 <body>
-    <h1>SpaceCRAFT Launcher</h1>
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo center">SpaceCRAFT Launcher</a>
+        </div>
+    </nav>
     <ul></ul>
 
     <script>
@@ -15,8 +25,10 @@
 
         // Add Items
         ipcRenderer.on('item:add', function(e, item){
+            ul.className = 'collection';
             //Create li, and text node; add it to the li 
             const li = document.createElement('li');
+            li.className = "collection-item";
             const itemText = document.createTextNode(item);
             li.appendChild(itemText);
             //add the li to the ul
@@ -33,6 +45,9 @@
 
         function removeItem(e){
             e.target.remove();
+            if(ul.children.length == 0){
+                ul.className = '';
+            }
         }
 
     </script>
