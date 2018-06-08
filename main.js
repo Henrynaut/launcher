@@ -7,6 +7,9 @@ const path = require('path');
 //ipcMain is used to catch the item from the ipcRenderer send function in addWindow
 const {app, BrowserWindow, Menu, ipcMain} = electron;
 
+// SET ENV
+// process.env.NODE_ENV = 'production';
+
 let mainWindow;
 let addWindow;
 
@@ -63,7 +66,7 @@ ipcMain.on('item:add',function(e, item){
 const mainMenuTemplate = [
     {
         //Creates a menu called File
-        label:'File',
+        label:'System Management',
         //add a submenu to the menu
         submenu:[
             {
