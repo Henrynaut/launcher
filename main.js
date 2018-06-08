@@ -16,14 +16,19 @@ let addWindow;
 // Listen for app to be ready
 app.on('ready', function(){
     // Create new window
-    mainWindow = new BrowserWindow({});
+    mainWindow = new BrowserWindow({
+        //Creates a borderless window
+        // frame: false
+    });
+
     // Load html into window
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'mainWindow.html'),
         protocol:'file:',
         slashes: true
     }));
-    // Quite app when closed
+
+    // Quit app when closed
     mainWindow.on('closed', function(){
         app.quit();
     });
@@ -71,6 +76,9 @@ const mainMenuTemplate = [
         submenu:[
             {
                 label: 'Add System',
+                //Checks which platform user is on and adds hotkey to menu
+                accelerator: process.platform == 'darwin' ? 'Command+S' :
+                'Ctrl+S',
                 click(){
                     createAddWindow();
                 }
