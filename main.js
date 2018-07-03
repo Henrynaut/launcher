@@ -1,6 +1,7 @@
 //Written by Neil McHenry on June 7th, 2018
 //If you'd like to edit the non-packaged applciation
 //install npm and electron (nodeJS package manager)
+//There needs to be some more instruction on how to install electron!!! Please.
 
 const electron = require('electron');
 const url = require('url');
