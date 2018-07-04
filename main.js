@@ -1,7 +1,9 @@
 //Written by Neil McHenry on June 7th, 2018
 //If you'd like to edit the non-packaged applciation
-//install npm and electron (nodeJS package manager)
+//install Node.JS and electron (nodeJS package manager)
+//     Tutorial on installing through npm: https://www.christianengvall.se/install-electron-tutorial-app/
 //     Tutorial on writing electron apps: https://electronjs.org/docs/tutorial/first-app
+//     Type "npm install" to install any missing dependencies (such as the node_modules folder)
 //     Type "npm start" in your terminal within the launcher directory to start the app
 
 const electron = require('electron');
