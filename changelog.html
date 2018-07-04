@@ -4,9 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>SpaceCRAFT Launcher</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+        
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        .topnav a.active {
+            background-color: rgb(13, 17, 66);
+            color: white;
+        }
+    </style>    
+
+
 </head>
 <body>
-    <p>hello</p>
+    <!-- navigation bar -->
+    <div class="topnav">
+            <a href="mainWindow.html">SpaceCRAFT</a>
+            <a class="active" href="changelog.html">Changelog</a>
+            <!-- <a href="#news">Changelog</a> -->
+            <a href="#contact">Server Selection</a>
+            <a href="#about">Run</a>
+    </div>
+
+    <h3 style="padding-left:20px;">SpaceCRAFT Release Notes:</h3>
+
+    <!-- Ordered and bulleted List of Changelog Text Information -->
+    <ol style="list-style-type:disc">
+      <li>June 7th, 2018
+        <ol class="square">
+            <li>Updated Launcher to work on MacOS and Linux using the Electron framework</li>
+            <li>Added in support for model import</li>
+        </ol>
+      </li>
+      <li>April 23rd, 2018
+        <ol class="square">
+            <li>Integrated UI Controls and Assets</li>
+            <li>Admins may find remaining history at: https://github.com/ericmunoz147/SpaceCRAFT-TeamLeads</li>
+        </ol>
+      </li>
+    </ol>  
+    
+
+
 </body>
 </html>
