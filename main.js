@@ -23,6 +23,8 @@ let addWindow;
 app.on('ready', function(){
     // Create new window
     mainWindow = new BrowserWindow({
+        //Set the icon to the SpaceCRAFT Logo
+        icon:'logo16px.ico'
         //Creates a borderless window
         // frame: false
     });
