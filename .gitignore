@@ -1,6 +1,10 @@
-# ignore node package manager folder #
+# ignore node package manager folder and cache #
 ###################
-/node_modules
+.DS_STORE
+.sass-cache
+node_modules
+release-builds
+
 
 # Packages #
 ############
