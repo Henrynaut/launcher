@@ -1,0 +1,132 @@
+BEGIN
+	ENTITY
+	{
+		Name : Asteroid_1 ,
+		Type : Object ,
+		Tags : Planet_Rotation_1 Data_Monitor_1 ,
+		Loadable_Mesh : false ,
+		Generate_Collider : false ,
+		Mesh_Path : /Engine/BasicShapes/Sphere ,
+		Scale : 1 ,
+		Mass : 1 ,
+		Parameters :
+		|| LocationX | 0.0
+		|| LocationY | 10.0
+		|| LocationZ | 1.0
+		|| RotationX | 0.0
+		|| RotationY | 0.0
+		|| RotationZ | 0.0
+		|| VelocityX | 0.0
+		|| VelocityY | 0.0
+		|| VelocityZ | 0.0
+		|| Angular_Velocity_X | 0.0
+		|| Angular_Velocity_Y | 0.0
+		|| Angular_Velocity_Z | 0.0
+		|| State | Free
+    || ,
+	}
+	ENTITY
+	{
+		Name : Cygnus ,
+		Type : Object ,
+		Tags : Data_Monitor_1 ,
+		Loadable_Mesh : true ,
+		Generate_Collider : true ,
+		Mesh_Path : \\LoadableMeshes\\Cygnus\\Cygnus.lwo ,
+		Scale : 100 ,
+		Mass : 1 ,
+		Parameters :
+		|| LocationX | 0.0
+		|| LocationY | 15.0
+		|| LocationZ | 5.0
+		|| RotationX | 0.0
+		|| RotationY | 0.0
+		|| RotationZ | 0.0
+		|| VelocityX | 0.0
+		|| VelocityY | 0.0
+		|| VelocityZ | 0.0
+		|| Angular_Velocity_X | 0.0
+		|| Angular_Velocity_Y | 0.0
+		|| Angular_Velocity_Z | 0.0
+		|| State | Free
+		|| ,
+	}
+	ENTITY
+	{
+		Name : MSL ,
+		Type : Object ,
+		Tags : Planet_Rotation_1 Data_Monitor_1 ,
+		Loadable_Mesh : true ,
+		Generate_Collider : false ,
+		Mesh_Path : \\LoadableMeshes\\MSL_rover\\MSL_clean.stl ,
+		Scale : 75 ,
+		Mass : 1 ,
+		Parameters :
+		|| LocationX | 10.0
+		|| LocationY | 10.0
+		|| LocationZ | 0.0
+		|| RotationX | 0.0
+		|| RotationY | 0.0
+		|| RotationZ | 0.0
+		|| VelocityX | 0.0
+		|| VelocityY | 0.0
+		|| VelocityZ | 0.0
+		|| Angular_Velocity_X | 0.0
+		|| Angular_Velocity_Y | 0.0
+		|| Angular_Velocity_Z | 0.0
+		|| State | Free
+		|| ,
+	}
+	ENTITY
+	{
+		Name : Mars ,
+		Type : Object ,
+		Tags : Planet_Rotation_1 Data_Monitor_1 ,
+		Loadable_Mesh : false ,
+		Generate_Collider : false ,
+		Mesh_Path : StaticMesh'/Game/Meshes/CompleteMars.CompleteMars' ,
+		Scale : 1 ,
+		Mass : 1 ,
+		Parameters :
+		|| LocationX | -11529.0
+		|| LocationY | 10000010.0
+		|| LocationZ | 5575.299805
+		|| RotationX | 0.0
+		|| RotationY | 0.0
+		|| RotationZ | 0.0
+		|| VelocityX | 0.0
+		|| VelocityY | 0.0
+		|| VelocityZ | 0.0
+		|| Angular_Velocity_X | 0.0
+		|| Angular_Velocity_Y | 0.0
+		|| Angular_Velocity_Z | 0.0
+		|| State | Free
+		|| ,
+	}
+	ENTITY
+	{
+		Name : Joystick_UI ,
+		Type : UI ,
+		Tags : Data_Monitor_1 ,
+		Loadable_Mesh : false ,
+		Generate_Collider : false ,
+		BP_Path : /Game/SpaceCraft_UI/UI_Control/Joystick.Joystick_C ,
+		Scale : 1 ,
+		Mass : 1 ,
+		Parameters :
+		|| LocationX | 0.0
+		|| LocationY | 5.0
+		|| LocationZ | 1.0
+		|| RotationX | 0.0
+		|| RotationY | 0.0
+		|| RotationZ | 0.0
+		|| Output_Roll | 0.0
+		|| Output_Pitch | 0.0
+		|| Output_Yaw | 0.0
+		|| Angular_Velocity_X | 0.0
+		|| Angular_Velocity_Y | 0.0
+		|| Angular_Velocity_Z | 0.0
+		|| State | Free
+		|| ,
+	}
+END
