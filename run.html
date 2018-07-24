@@ -1,67 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style/style.css">
 
-<style>
+  <!-- Toggle Switch CSS -->
+  <!-- <style>
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
 
-.switch input {display:none;}
+  .switch input {display:none;}
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
 
-input:checked + .slider {
-  background-color: #2196F3;
-}
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
 
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
 
-.slider.round:before {
-  border-radius: 50%;
-}
-</style>
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  </style> -->
+
+  <!-- Slider CSS -->
+  <style>
+    .slidecontainer {
+        width: 100%;
+    }
+    
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 25px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+    
+    .slider:hover {
+        opacity: 1;
+    }
+    
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: #4CAF50;
+        cursor: pointer;
+    }
+    
+    .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #4CAF50;
+        cursor: pointer;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -75,13 +115,42 @@ input:checked + .slider:before {
 
 <h2 style="padding-left: 20px;">Enable VR Mode?</h2>
 
-
+<!-- Add toggle switch to html body -->
 <label class="switch">
   <input type="checkbox">
   <span class="slider round"></span>
 </label>
 
     <!-- Insert VR "stereo on" command functionality here -->
+
+<h2 style="padding-left: 20px;">World Size Selection Slider:</h2>
+<p style="padding-left: 40px;">Drag the slider to change the world scale.</p>
+
+<!-- Define new div to contain slider -->
+<div class="slidecontainer">
+  <input type="range" orient="vertical" min="-10" max="10" value="1" class="slider" id="myRange">
+  <p style="padding-left: 40px;">Scale Multiplier: <span id="demo"></span></p>
+</div>
+
+<!-- Javascript to show slide value -->
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+
+<ul>
+  <li>10: World is ten times larger</li>
+  <li>&nbsp 4: World is four times larger</li>
+  <li>-1, 0 or 1: World is normal scale</li>
+  <li>-&nbsp 4: World is four times smaller</li>
+  <li>-10: World ten times smaller </li>
+</ul>
+
 
 
 
