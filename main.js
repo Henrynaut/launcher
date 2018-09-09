@@ -45,6 +45,16 @@ app.on('ready', function(){
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
     // Insert menu
     Menu.setApplicationMenu(mainMenu);
+
+    // //Add in a right-click context menu
+    // const ctxMenu = new Menu();
+    // ctxMenu.append(new MenuItem({
+    //     label: 'Hello'
+    // }))
+
+    // win.webContents.on('context-menu', function(e, params){
+    //     ctxMenu.popup(win, params.x, params.y)
+    // })
 });
 
 // Handle create add window
@@ -79,7 +89,7 @@ ipcMain.on('item:add',function(e, item){
 const mainMenuTemplate = [
     {
         //Creates a menu called File
-        label:'System Management',
+        label:'File',
         //add a submenu to the menu
         submenu:[
             {
@@ -106,6 +116,43 @@ const mainMenuTemplate = [
                     //Quits the application on click or hotkey press
                     app.quit();
                 }
+            }
+        ]
+    },
+    {
+        //Add the Edit Menu
+        label:'Edit',
+        submenu: [
+            { role: 'undo' },
+            { role: 'redo' },
+            { type: 'separator' },
+            { role: 'cut' },
+            { role: 'copy' },
+            { role: 'paste' },
+            { role: 'pasteandmatchstyle' },
+            { role: 'delete' },
+            { role: 'selectall' }
+          ]
+    },
+    
+
+    {
+    role: 'window',
+    submenu: [
+        { role: 'minimize' },
+        { role: 'close' }
+    ]
+    },
+    {
+        //Add the Help menu
+        label: 'Help',
+        submenu: [
+            {
+                label: 'About SpaceCRAFT',
+                click: function () {
+                electron.shell.openExternal('http://www.spacecraft-vr.com');
+                },
+                accelerator: 'CmdOrCtrl + Shift + H'
             }
         ]
     }
