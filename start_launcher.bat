@@ -1,0 +1,3 @@
+@ECHO OFF
+ECHO Command received to start launcher in developer mode...
+npm start
