@@ -2,7 +2,9 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="css/style.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
   <!-- Toggle Switch CSS -->
   <!-- <style>
@@ -105,54 +107,56 @@
 </head>
 <body>
 
-<!-- navigation bar -->
-<div class="topnav">
-    <a href="mainWindow.html">SpaceCRAFT</a>
-    <a href="changelog.html">Changelog</a>
-    <a href="serverSelect.html">Server Selection</a>
-    <a href="initialConditions.html">Initial Conditions</a>
-    <a class="active" href="run.html">Run</a>
-</div>
+  <!-- navigation bar -->
+  <div class="topnav">
+      <a href="mainWindow.html">SpaceCRAFT</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="serverSelect.html">Server Browser</a>
+      <a href="initialConditions.html">Initial Conditions</a>
+      <a class="active" href="run.html">Run</a>
+  </div>
 
-<h2 style="padding-left: 20px;">Enable VR Mode?</h2>
+  <h2 style="padding-left: 20px;">Enable VR Mode?</h2>
 
-<!-- Add toggle switch to html body -->
-<label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label>
+  <!-- Add toggle switch to html body -->
+  <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label>
 
-    <!-- Insert VR "stereo on" command functionality here -->
-  <!-- This will include integration into the source code to allow those to switch easily -->
-<h2 style="padding-left: 20px;">World Size Selection Slider:</h2>
-<p style="padding-left: 40px;">Drag the slider to change the world scale.</p>
+      <!-- Insert VR "stereo on" command functionality here -->
+    <!-- This will include integration into the source code to allow those to switch easily -->
+  <h2 style="padding-left: 20px;">World Size Selection Slider:</h2>
+  <p style="padding-left: 40px;">Drag the slider to change the world scale.</p>
 
-<!-- Define new div to contain slider -->
-<div class="slidecontainer">
-  <input type="range" orient="vertical" min="-10" max="10" value="1" class="slider" id="myRange">
-  <p style="padding-left: 40px;">Scale Multiplier: <span id="demo"></span></p>
-</div>
+  <!-- Define new div to contain slider -->
+  <div class="slidecontainer">
+    <input type="range" orient="vertical" min="-10" max="10" value="1" class="slider" id="myRange">
+    <p style="padding-left: 40px;">Scale Multiplier: <span id="demo"></span></p>
+  </div>
 
-<!-- Javascript to show slide value -->
-<script>
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
+  <!-- Javascript to show slide value -->
+  <script>
+  var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value;
 
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
-</script>
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+  }
+  </script>
 
-<ul>
-  <li>10: World is ten times larger</li>
-  <li>&nbsp 4: World is four times larger</li>
-  <li>-1, 0 or 1: World is normal scale</li>
-  <li>-&nbsp 4: World is four times smaller</li>
-  <li>-10: World ten times smaller </li>
-</ul>
+  <ul>
+    <li>10: World is ten times larger</li>
+    <li>&nbsp 4: World is four times larger</li>
+    <li>-1, 0 or 1: World is normal scale</li>
+    <li>-&nbsp 4: World is four times smaller</li>
+    <li>-10: World ten times smaller </li>
+  </ul>
 
-
+    <button class="btn waves-effect waves-light">
+        Run
+    </button>
 
 
 </body>
