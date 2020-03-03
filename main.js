@@ -24,9 +24,12 @@ app.on('ready', function(){
     // Create new window
     mainWindow = new BrowserWindow({
         //Set the icon to the SpaceCRAFT Logo
-        icon:'logo16px.ico'
+        // icon:'logo16px.ico'
         //Creates a borderless window
-        // frame: false
+        frame: false,
+        // width: 1000,
+        // height: 800,
+        titleBarStyle: "hiddenInset"
     });
 
     // Load html into window
