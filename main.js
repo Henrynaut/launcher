@@ -23,13 +23,16 @@ let addWindow;
 app.on('ready', function(){
     // Create new window
     mainWindow = new BrowserWindow({
-        //Set the icon to the SpaceCRAFT Logo
-        // icon:'logo16px.ico'
+        //Set the app icon to the SpaceCRAFT Logo
+        icon:'logo16px.ico',
         //Creates a borderless window
         frame: false,
-        // width: 1000,
-        // height: 800,
-        titleBarStyle: "hiddenInset"
+        webPreferences: {
+            preload: path.join(__dirname, 'preload.js'),
+
+            // 2. Enable Node.js integration
+            nodeIntegration: true
+        }
     });
 
     // Load html into window

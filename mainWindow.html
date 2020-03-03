@@ -42,6 +42,21 @@
         // Save query within the UL
         const ul = document.querySelector('ul');
 
+
+        // Require the titlebar module 
+        // https://ourcodeworld.com/articles/read/938/how-to-create-a-custom-titlebar-inspired-on-visual-studio-code-title-bar-in-electron-framework
+        const customTitlebar = require('custom-electron-titlebar');
+        // Create the titlebar with custom settings
+        let MyTitleBar = new customTitlebar.Titlebar({
+            backgroundColor: customTitlebar.Color.fromHex('#020c1c'),
+            shadow: true,
+            //Set the title bar icon to SpaceCRAFT logo
+            icon: './logo16px.ico'
+        });
+        // Update Titlebar text
+        MyTitleBar.updateTitle('SpaceCRAFT VR Launcher');
+
+
         // Add Items
         ipcRenderer.on('item:add', function(e, item){
             ul.className = 'collection';
